@@ -71,7 +71,7 @@ hello Alice
 ```
 
 A more complicated example, handling enums, which is a common C code generation usecase:
-```
+```cpp
 #include <cstdio>
 
 /*
