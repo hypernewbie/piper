@@ -61,7 +61,7 @@ def process( fileName ):
 			if state == 3: template_lines.append( line )
 			if state == 4:
 				template_dictionary[template_lines[0]] = "\n".join( template_lines[1:] )
-				template_lines = []
+				template_lines = []; state = 0
 			if state == 5: eval_lines.append( line )
 			if state == 6:
 				if skip == 0: skip += 1; out_lines.append( line_ ); continue
