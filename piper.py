@@ -57,10 +57,11 @@ def process( fileName ):
 			if state == 2:
 				newdata = json.loads( "\n".join( json_lines ) )
 				data_dictionary = {**data_dictionary, **newdata}
-				json_lines = []
+				json_lines = []; state = 0
 			if state == 3: template_lines.append( line )
 			if state == 4:
 				template_dictionary[template_lines[0]] = "\n".join( template_lines[1:] )
+				template_lines = []
 			if state == 5: eval_lines.append( line )
 			if state == 6:
 				if skip == 0: skip += 1; out_lines.append( line_ ); continue
